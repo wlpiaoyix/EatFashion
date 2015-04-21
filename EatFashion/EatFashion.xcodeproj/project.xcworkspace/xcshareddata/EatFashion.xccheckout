@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>139EE3D6-B1D3-491E-8143-AAC125A824C5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>EatFashion</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0EAF38B5B1D9E56A87BCD8A141224F2C8BE7141F</key>
+		<string>https://github.com/wlpiaoyix/StoreRoom.git</string>
+		<key>5782D6BB2050FCC0DC0D7E11C5724D6F30B784BB</key>
+		<string>https://github.com/wlpiaoyix/EatFashion.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>EatFashion/EatFashion.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0EAF38B5B1D9E56A87BCD8A141224F2C8BE7141F</key>
+		<string>../../../../StoreRoom</string>
+		<key>5782D6BB2050FCC0DC0D7E11C5724D6F30B784BB</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/wlpiaoyix/EatFashion.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5782D6BB2050FCC0DC0D7E11C5724D6F30B784BB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5782D6BB2050FCC0DC0D7E11C5724D6F30B784BB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>EatFashion</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0EAF38B5B1D9E56A87BCD8A141224F2C8BE7141F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>StoreRoom</string>
+		</dict>
+	</array>
+</dict>
+</plist>

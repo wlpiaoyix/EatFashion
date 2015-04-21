@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  ShiShang
+
+  Created by wlpiaoyi on 14/12/7.
+  Copyright (c) 2014年 wlpiaoyi. All rights reserved.
+*/
+"net_faild" = "网络请求失败！";
+"shopId_opt_null" = "商店ID不能为空!";
+"foodtype_opt_null" = "请输入产品类型!";
+"foodtype_opt_msg" = "正在保存产品类型...";
+"foodname_opt_null" = "请输入产品名称";
+"foodprice_opt_null" = "请输入产品价格";
+"foodID_opt_null" = "产品ID不能为空!";
+"regesit_SMS_verification" = "吃尚验证码：%d，用于用户注册验证。【请勿把您收到的短信验证码泄露给其他人】";
+"updatePassword_SMS_verification" = "吃尚验证码：%d，用于用户注册验证。【请勿把您收到的短信验证码泄露给其他人】";

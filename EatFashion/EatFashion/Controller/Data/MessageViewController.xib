@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MessageViewController">
+            <connections>
+                <outlet property="searchBae" destination="pBE-fW-2Ne" id="msF-D3-GEh"/>
+                <outlet property="view" destination="lI9-kL-Cl2" id="M9n-2f-kjO"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="lI9-kL-Cl2">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="pBE-fW-2Ne">
+                    <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="x1H-qb-bbI"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="pBE-fW-2Ne" firstAttribute="leading" secondItem="lI9-kL-Cl2" secondAttribute="leading" id="1lQ-1y-muz"/>
+                <constraint firstItem="pBE-fW-2Ne" firstAttribute="top" secondItem="lI9-kL-Cl2" secondAttribute="top" constant="64" id="JDx-uD-ZfU"/>
+                <constraint firstAttribute="trailing" secondItem="pBE-fW-2Ne" secondAttribute="trailing" id="OEc-iQ-1pP"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="290" y="-76"/>
+        </view>
+    </objects>
+</document>

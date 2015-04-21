@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9CAE1C04-FA31-4C3B-8A1C-D2118D7DE21E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Common</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0EAF38B5B1D9E56A87BCD8A141224F2C8BE7141F</key>
+		<string>https://github.com/wlpiaoyix/StoreRoom.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Common/Common.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0EAF38B5B1D9E56A87BCD8A141224F2C8BE7141F</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/wlpiaoyix/StoreRoom.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0EAF38B5B1D9E56A87BCD8A141224F2C8BE7141F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0EAF38B5B1D9E56A87BCD8A141224F2C8BE7141F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>StoreRoom</string>
+		</dict>
+	</array>
+</dict>
+</plist>

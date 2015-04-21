@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" rowHeight="34" id="KGk-i7-Jjw" customClass="BuyOrderMenuCell">
+            <rect key="frame" x="0.0" y="0.0" width="206" height="34"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="菜名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dF0-vx-Nhi">
+                        <rect key="frame" x="0.0" y="1" width="92" height="16.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16.5" id="fpV-fF-wEB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥120" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIg-a0-7eL">
+                        <rect key="frame" x="0.0" y="21" width="92" height="12"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="UyA-if-7Rb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.83470184950000004" green="0.0" blue="0.1080266406" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N6f-Ox-TbX">
+                        <rect key="frame" x="100" y="0.0" width="104" height="34"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhR-F0-UWk">
+                                <rect key="frame" x="0.0" y="2" width="36" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="buyorder_menu_btn_minus.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIc-7g-ocH">
+                                <rect key="frame" x="35" y="2" width="34" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fai-Ve-pVS">
+                                <rect key="frame" x="68" y="2" width="36" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="buyorder_menu_btn_plus.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="104" id="25g-8B-5Z9"/>
+                            <constraint firstAttribute="height" constant="34" id="qKG-PH-65v"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="N6f-Ox-TbX" secondAttribute="trailing" constant="-6" id="4nc-CA-itx"/>
+                    <constraint firstItem="N6f-Ox-TbX" firstAttribute="leading" secondItem="dF0-vx-Nhi" secondAttribute="trailing" constant="8" id="DhF-23-ye1"/>
+                    <constraint firstItem="N6f-Ox-TbX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="GgE-sw-0FB"/>
+                    <constraint firstItem="dF0-vx-Nhi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-7" id="LYv-0m-FLI"/>
+                    <constraint firstItem="oIg-a0-7eL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="XDE-RO-Yc9"/>
+                    <constraint firstItem="N6f-Ox-TbX" firstAttribute="leading" secondItem="oIg-a0-7eL" secondAttribute="trailing" constant="8" id="jmc-SI-whB"/>
+                    <constraint firstItem="oIg-a0-7eL" firstAttribute="top" secondItem="dF0-vx-Nhi" secondAttribute="bottom" constant="3.5" id="ya2-Dw-F17"/>
+                    <constraint firstItem="dF0-vx-Nhi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="ze0-9k-OuK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.24553571430000001" green="0.24553571430000001" blue="0.24553571430000001" alpha="0.23999999999999999" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="buttonMinus" destination="VhR-F0-UWk" id="dgz-Bv-5zB"/>
+                <outlet property="buttonPlus" destination="Fai-Ve-pVS" id="cFT-kY-1Pi"/>
+                <outlet property="lableName" destination="dF0-vx-Nhi" id="2eS-dU-7ec"/>
+                <outlet property="lableNum" destination="JIc-7g-ocH" id="XDf-Jv-m9s"/>
+                <outlet property="lablePrice" destination="oIg-a0-7eL" id="okd-93-q0F"/>
+            </connections>
+            <point key="canvasLocation" x="176" y="350.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="buyorder_menu_btn_minus.png" width="52" height="43"/>
+        <image name="buyorder_menu_btn_plus.png" width="52" height="43"/>
+    </resources>
+</document>
