@@ -113,7 +113,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999.99" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z32-Fa-cAg">
-                            <rect key="frame" x="20" y="42" width="100" height="59"/>
+                            <rect key="frame" x="20" y="33" width="100" height="59"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="59" id="9uM-tO-RT3"/>
                                 <constraint firstAttribute="width" constant="100" id="v2S-bs-9ck"/>
@@ -147,7 +147,7 @@
                         <constraint firstAttribute="trailing" secondItem="OAa-s1-pg6" secondAttribute="trailing" constant="20" id="JXm-O0-32M"/>
                         <constraint firstItem="dym-sQ-sxz" firstAttribute="top" secondItem="1Po-Zs-K0z" secondAttribute="bottom" constant="30" id="L2y-Ba-zeB"/>
                         <constraint firstItem="OAa-s1-pg6" firstAttribute="top" secondItem="GQr-Ak-JyN" secondAttribute="bottom" id="L9F-zE-deb"/>
-                        <constraint firstItem="z32-Fa-cAg" firstAttribute="top" secondItem="WD5-2H-sS2" secondAttribute="bottom" constant="13" id="R6t-it-HMT"/>
+                        <constraint firstItem="z32-Fa-cAg" firstAttribute="top" secondItem="WD5-2H-sS2" secondAttribute="bottom" constant="4" id="R6t-it-HMT"/>
                         <constraint firstItem="0eg-eW-PP9" firstAttribute="top" secondItem="OAa-s1-pg6" secondAttribute="bottom" id="Syd-6p-C4M"/>
                         <constraint firstItem="TIQ-U8-T7q" firstAttribute="top" secondItem="ZmL-YP-XED" secondAttribute="top" constant="9" id="WJb-Pf-0ub"/>
                         <constraint firstItem="WD5-2H-sS2" firstAttribute="leading" secondItem="ZmL-YP-XED" secondAttribute="leading" constant="20" id="XLo-O2-yZj"/>
@@ -164,16 +164,28 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" tag="333" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="没有支出记录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKe-fl-Ryy">
+                    <rect key="frame" x="10" y="227" width="300" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="pfA-6P-ajg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="4nX-bM-cdq" firstAttribute="top" secondItem="ZmL-YP-XED" secondAttribute="bottom" constant="1" id="FFF-Nl-OpE"/>
+                <constraint firstItem="DKe-fl-Ryy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="G8I-JH-cym"/>
                 <constraint firstItem="ZmL-YP-XED" firstAttribute="top" secondItem="rle-09-EIP" secondAttribute="bottom" constant="10" id="Gk8-jW-Sm3"/>
                 <constraint firstItem="rle-09-EIP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="69" id="PIU-en-KaK"/>
                 <constraint firstAttribute="centerX" secondItem="ZmL-YP-XED" secondAttribute="centerX" id="gtd-O9-Ekt"/>
+                <constraint firstAttribute="trailing" secondItem="DKe-fl-Ryy" secondAttribute="trailing" constant="10" id="jNz-7Y-lUT"/>
                 <constraint firstAttribute="trailing" secondItem="4nX-bM-cdq" secondAttribute="trailing" constant="10" id="mnj-nE-Eaz"/>
                 <constraint firstItem="rle-09-EIP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="qFw-hl-OBY"/>
                 <constraint firstAttribute="bottom" secondItem="4nX-bM-cdq" secondAttribute="bottom" constant="1" id="raH-55-dld"/>
+                <constraint firstItem="DKe-fl-Ryy" firstAttribute="top" secondItem="ZmL-YP-XED" secondAttribute="bottom" constant="8" id="rgP-2y-SaY"/>
                 <constraint firstItem="4nX-bM-cdq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="zbX-hc-WS0"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

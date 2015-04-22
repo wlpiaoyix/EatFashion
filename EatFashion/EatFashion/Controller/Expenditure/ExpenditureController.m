@@ -14,6 +14,7 @@
 #import "MJRefresh.h"
 #import "MJRefreshConst.h"
 #import "ExpendtureAddController.h"
+#import "ShiShangDataPickerView.h"
 
 static NSString *ExpendtureHeadCellIdentifier = @"ExpendtureHeadCell";
 static NSString *ExpendtureProductIdentifier = @"ExpendtureProductCell";
@@ -27,6 +28,9 @@ static NSString *ExpendtureTailCellIdentifier = @"ExpendtureTailCell";
 @property (weak, nonatomic) IBOutlet UILabel *lableEndDate;
 @property (weak, nonatomic) IBOutlet UILabel *lableEndTime;
 @property (weak, nonatomic) IBOutlet UITableView *tableViewExpendture;
+
+@property (strong, nonatomic) ShiShangDataPickerView *dp;
+@property (strong, nonatomic) PopUpMovableView *movableView;
 
 @property (strong, nonatomic) ExpenditureService *eService;
 @property (strong, nonatomic) NSArray *arryData;
@@ -42,7 +46,7 @@ static NSString *ExpendtureTailCellIdentifier = @"ExpendtureTailCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setTitle:@"支出"];
+    [self setTitle:@"记录支出"];
     [self.buttonAddExpenditure setCornerRadiusAndBorder:5 BorderWidth:1 BorderColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3]];
     [self.buttonAddExpenditure addTarget:self action:@selector(onclickAddExpendture)];
     self.tableViewExpendture.delegate = self;
@@ -65,6 +69,8 @@ static NSString *ExpendtureTailCellIdentifier = @"ExpendtureTailCell";
     [self.tableViewExpendture registerNib:nib forCellReuseIdentifier:ExpendtureProductIdentifier];
     nib = [UINib nibWithNibName:ExpendtureTailCellIdentifier bundle:nil];
     [self.tableViewExpendture registerNib:nib forCellReuseIdentifier:ExpendtureTailCellIdentifier];
+    [self.buttonStartDate addTarget:self action:@selector(onclickStartDate)];
+    [self.buttonEndDate addTarget:self action:@selector(onclickEndDate)];
 }
 - (void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -80,11 +86,13 @@ static NSString *ExpendtureTailCellIdentifier = @"ExpendtureTailCell";
     self.lableExpendtureValue.text = @"0.0";
     [self.eService getStatisExpenseForStartTime:self.startTime endTime:self.endTime Success:^(id data, NSDictionary *userInfo) {
         NSArray *json = [data JSONValue];
+        NSString *price = @"0.0";
         if(json && json.count > 0){
-            NSString *price = [json.firstObject objectForKey:@"price"];
-            if(price){
-                self.lableExpendtureValue.text = price;
-            }
+            price = [json.firstObject objectForKey:@"price"];
+        }
+        if(price){
+            self.lableExpendtureValue.text = price;
+            [self.lableExpendtureValue automorphismHeight];
         }
         
     } faild:^(id data, NSDictionary *userInfo) {
@@ -110,6 +118,8 @@ static NSString *ExpendtureTailCellIdentifier = @"ExpendtureTailCell";
         if([_arryData count] == count && self.pageNum > 0){
             self.pageNum--;
         }
+        [self.view viewWithTag:333].hidden = !(_arryData == nil || [_arryData count] == 0);
+        self.tableViewExpendture.scrollEnabled = !(_arryData == nil || [_arryData count] == 0);
         [Utils hiddenLoading];
     } faild:^(id data, NSDictionary *userInfo) {
         [Utils hiddenLoading];
@@ -221,10 +231,44 @@ static NSString *ExpendtureTailCellIdentifier = @"ExpendtureTailCell";
     _arryData = [NSArray arrayWithArray:array];
 }
 -(void) onclickStartDate{
+    
+    PopUpMovableView *movableView = [PopUpMovableView new];
+    ShiShangDataPickerView *dp = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ShiShangDataPickerView class]) owner:self options:nil].firstObject;
+    [dp addTarget:self action:@selector(closePopUp)];
+    [dp setDate:self.startTime];
+    [movableView setBackgroundColor:[UIColor clearColor]];
+    [movableView addSubview:dp];
+    [movableView setFlagTouchHidden:NO];
+    __weak typeof(self) weaklself = self;
+    [movableView setBeforeClose:^(PopUpMovableView *vmv) {
+        weaklself.startTime = ((ShiShangDataPickerView*)vmv.viewShow).date;
+        [weaklself reloadData];
+    }];
+    [movableView show];
+    self.movableView = movableView;
+    
 
+}
+
+-(void) closePopUp{
+    [_movableView close];
 }
 -(void) onclickEndDate{
     
+    PopUpMovableView *movableView = [PopUpMovableView new];
+    ShiShangDataPickerView *dp = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ShiShangDataPickerView class]) owner:self options:nil].firstObject;
+    [dp addTarget:self action:@selector(closePopUp)];
+    [dp setDate:self.endTime];
+    [movableView setBackgroundColor:[UIColor clearColor]];
+    [movableView addSubview:dp];
+    [movableView setFlagTouchHidden:NO];
+    __weak typeof(self) weaklself = self;
+    [movableView setBeforeClose:^(PopUpMovableView *vmv) {
+        weaklself.endTime = ((ShiShangDataPickerView*)vmv.viewShow).date;
+        [weaklself reloadData];
+    }];
+    [movableView show];
+    self.movableView = movableView;
 }
 
 - (void)didReceiveMemoryWarning {

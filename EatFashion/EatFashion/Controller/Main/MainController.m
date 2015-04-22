@@ -35,7 +35,7 @@
     [ViewAutolayoutCenter persistConstraintRelation:self.viewMain margins:UIEdgeInsetsMake(0, 0, 0, 0) toItems:nil];
     _viewButtom = [ScrollButtonOpt new];
     _viewButtom.frame = CGRectMake(0, 0, appWidth(), 44);
-    _viewButtom.values = @[@{@"normal":@"button_menu_un.png",@"selected":@"button_menu.png",@"title":@"下单"},@{@"normal":@"button_manager_un.png",@"selected":@"button_manager.png",@"title":@"管理"},@{@"normal":@"button_expenditure_un.png",@"selected":@"button_expenditure.png",@"title":@"支出"},@{@"normal":@"button_message_un.png",@"selected":@"button_message.png",@"title":@"群组"},@{@"normal":@"button_data_un.png",@"selected":@"button_data.png",@"title":@"数据"}];
+    _viewButtom.values = @[@{@"normal":@"button_menu_un.png",@"selected":@"button_menu.png",@"title":@"下单"},@{@"normal":@"button_manager_un.png",@"selected":@"button_manager.png",@"title":@"管理"},@{@"normal":@"button_expenditure_un.png",@"selected":@"button_expenditure.png",@"title":@"记账"},@{@"normal":@"button_message_un.png",@"selected":@"button_message.png",@"title":@"群组"},@{@"normal":@"button_data_un.png",@"selected":@"button_data.png",@"title":@"数据"}];
     _viewButtom.imageBg = [UIImage imageWithColor:[UIColor clearColor]];
     _viewButtom.backgroundColor = [UIColor clearColor];
     [_viewButtom autoresizingMask_TLR];

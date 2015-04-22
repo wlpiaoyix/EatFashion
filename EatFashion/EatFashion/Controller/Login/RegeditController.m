@@ -190,11 +190,12 @@
 }
 -(void) onclickSmsVerification{
     _textFieldValidate.text = @"";
-    EntityUser *user;
-    if ([self regesitVerification:&user]==-1) {
+    
+    if (![NSString isEnabled:self.textFieldUserName.text]) {
+        [Utils showAlert:@"请输入手机号!" title:nil];
         return;
     }
-    smsRandom =  [self.userService smsVerificationRegesiterWithPhone:user.phoneNumber success:^(id data, NSDictionary *userInfo) {
+    smsRandom =  [self.userService smsVerificationRegesiterWithPhone:self.textFieldUserName.text success:^(id data, NSDictionary *userInfo) {
         [Utils showAlert:@"已发送" title:nil];
     }];
 }
