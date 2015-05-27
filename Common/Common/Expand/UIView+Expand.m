@@ -19,6 +19,12 @@
         CGPoint p = sv.frame.origin;
         origin.x += p.x;
         origin.y += p.y;
+        if([sv isKindOfClass:[UIScrollView class]]){
+            CGPoint offset = [((UIScrollView*)sv) contentOffset];
+            origin.x -= offset.x;
+            origin.y -= offset.y;
+        }
+        
         sv = sv.superview;
         if (sv==superView) {
             sv = nil;

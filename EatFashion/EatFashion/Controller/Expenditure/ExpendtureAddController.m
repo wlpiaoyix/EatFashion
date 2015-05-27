@@ -60,7 +60,6 @@ static NSString *ExpendtureConfirmProductCellIdentifier = @"ExpendtureConfirmPro
         weakself.tableViewProduct.frame = weakself.rectTableView;
     }];
 }
-
 -(void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     CGRect rectTableView = self.tableViewProduct.frame;

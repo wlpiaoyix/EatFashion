@@ -84,17 +84,14 @@
 //<==
 -(void) reloadData{
     unsigned int totalPrice = 0;
-    NSMutableArray *removearray = [NSMutableArray new];
     for (EntityFood *food in _arrayData) {
-        if (food.amount.intValue<=0) {
-            [removearray addObject:food];
+        if (food.amount.floatValue<=0) {
             continue;
         }
         NSNumber *price = food.price;
         NSNumber *number =  food.amount;
         totalPrice += (price.floatValue*number.floatValue*100);
     }
-    [_arrayData removeObjectsInArray:removearray];
     _totalPrice = [NSNumber numberWithFloat:(float)((totalPrice)/100.0f)];
     _lableTotal.text = [NSString stringWithFormat:@"￥%@",_totalPrice.stringValue];
     [self.tableViewMenu reloadData];
@@ -107,6 +104,14 @@
 }
 -(BOOL) resignFirstResponder{
     [_textFieldDesk resignFirstResponder];
+    NSMutableArray *removearray = [NSMutableArray new];
+    for (EntityFood *food in _arrayData) {
+        if (food.amount.floatValue<=0) {
+            [removearray addObject:food];
+            continue;
+        }
+    }
+    [_arrayData removeObjectsInArray:removearray];
     return [super resignFirstResponder];
 }
 @end

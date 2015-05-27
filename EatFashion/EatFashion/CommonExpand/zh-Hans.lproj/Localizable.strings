@@ -12,5 +12,5 @@
 "foodname_opt_null" = "请输入产品名称";
 "foodprice_opt_null" = "请输入产品价格";
 "foodID_opt_null" = "产品ID不能为空!";
-"regesit_SMS_verification" = "吃尚验证码：%d，用于用户注册验证。【请勿把您收到的短信验证码泄露给其他人】";
-"updatePassword_SMS_verification" = "吃尚验证码：%d，用于用户注册验证。【请勿把您收到的短信验证码泄露给其他人】";
+"regesit_SMS_verification" = "商家好助手验证码：【%d】，用于用户注册验证。请勿把您收到的短信验证码泄露给其他人";
+"updatePassword_SMS_verification" = "商家好助手验证码：【%d】，用于用户密码重置验证。请勿把您收到的短信验证码泄露给其他人";

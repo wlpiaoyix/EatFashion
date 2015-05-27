@@ -11,5 +11,5 @@
 
 @interface OrderCollectionViewCell : UICollectionViewCell
 @property (nonatomic,strong) EntityFood *food;
-@property (nonatomic) int orderNum;
+@property (nonatomic) float orderNum;
 @end

@@ -52,6 +52,8 @@ static NSString *ExpendtureTailCellIdentifier = @"ExpendtureTailCell";
     self.tableViewExpendture.delegate = self;
     self.tableViewExpendture.dataSource = self;
     self.tableViewExpendture.alwaysBounceHorizontal = NO;
+    self.lableEndTime.hidden = YES;
+    self.lableStartTime.hidden = YES;
     self.eService = [ExpenditureService new];
     self.startTime = [NSDate new];
     self.endTime = [NSDate new];
@@ -61,6 +63,8 @@ static NSString *ExpendtureTailCellIdentifier = @"ExpendtureTailCell";
     [self.tableViewExpendture addFooterWithCallback:^{
         [self reloadData:self.pageNum+1];
     }];
+    self.endTime = [NSDate new];
+    self.startTime = self.endTime;
     
     
     UINib *nib = [UINib nibWithNibName:ExpendtureHeadCellIdentifier bundle:nil];
@@ -79,6 +83,10 @@ static NSString *ExpendtureTailCellIdentifier = @"ExpendtureTailCell";
 
 - (void)reloadData{
     self.arryData = nil;
+//    NSDate *today = [NSDate new];
+//    if(today.day == _endTime.day && today.year == _endTime.year){
+//        self.endTime = [today offsetDay:1];
+//    }
     [self reloadData:0];
 }
 - (void)reloadData:(int) pageNum{
@@ -140,6 +148,10 @@ static NSString *ExpendtureTailCellIdentifier = @"ExpendtureTailCell";
     _endTime = [_endTime offsetSecond:59-_endTime.second];
     self.lableEndDate.text = [self.endTime dateFormateDate:@"yyyy-MM-dd"];
     self.lableEndTime.text = [self.endTime dateFormateDate:@"HH:mm:ss"];
+    if(![self ifMaxDate:_endTime minDate:_startTime]){
+        NSDate *startTime = self.endTime;
+        self.startTime = startTime;
+    }
 }
 
 -(void) setStartTime:(NSDate *)startTime{
@@ -149,6 +161,49 @@ static NSString *ExpendtureTailCellIdentifier = @"ExpendtureTailCell";
     _startTime = [_startTime offsetSecond:-_startTime.second];
     self.lableStartDate.text = [self.startTime dateFormateDate:@"yyyy-MM-dd"];
     self.lableStartTime.text = [self.startTime dateFormateDate:@"HH:mm:ss"];
+    if(![self ifMaxDate:_endTime minDate:_startTime]){
+        NSDate *endTime = self.startTime;
+        self.endTime = endTime;
+    }
+}
+
+-(BOOL) ifMaxDate:(NSDate*) maxDate minDate:(NSDate*) minDate {
+    int maxValue = maxDate.year;
+    int minValue = minDate.year;
+    if(maxValue < minValue){
+        return false;
+    }else if(maxValue > minValue){
+        return true;
+    }
+    maxValue = maxDate.month;
+    minValue = minDate.month;
+    if(maxValue < minValue){
+        return false;
+    }else if(maxValue > minValue){
+        return true;
+    }
+    maxValue = maxDate.day;
+    minValue = minDate.day;
+    if(maxValue < minValue){
+        return false;
+    }else if(maxValue > minValue){
+        return true;
+    }
+    maxValue = maxDate.hour;
+    minValue = minDate.hour;
+    if(maxValue < minValue){
+        return false;
+    }else if(maxValue > minValue){
+        return true;
+    }
+    maxValue = maxDate.minute;
+    minValue = minDate.minute;
+    if(maxValue < minValue){
+        return false;
+    }else if(maxValue > minValue){
+        return true;
+    }
+    return false;
 }
 
 

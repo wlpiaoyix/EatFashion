@@ -78,23 +78,20 @@ NSString *const KeyDatas = @"datas";
     [self setSELShowKeyBoardStart:^{
     } End:^(CGRect keyBoardFrame) {
         CGPoint p = [weakself.viewCartOpt.viewMove getAbsoluteOrigin:weakself.view];
-        float offy = appHeight()-keyBoardFrame.size.height-(p.y+weakself.viewCartOpt.viewMove.frameHeight);
+        float offy = appHeight()-keyBoardFrame.size.height-(p.y+weakself.viewCartOpt.viewMove.frameHeight)+20;
         if (offy<0) {
             CGRect r = weakself.view.frame;
             r.origin.x = 0;
             r.origin.y = offy;
-            [UIView animateWithDuration:0.25f animations:^{
-                weakself.view.frame = r;
-            }];
+            weakself.view.frame = r;
+
         }
     }];
     [self setSELHiddenKeyBoardBefore:^{
         if (weakself.view.frame.origin.y<0) {
-            [UIView animateWithDuration:0.25f animations:^{
-                CGRect r = weakself.view.frame;
-                r.origin.y = 0;
-                weakself.view.frame = r;
-            }];
+            CGRect r = weakself.view.frame;
+            r.origin.y = 0;
+            weakself.view.frame = r;
         }
     } End:^(CGRect keyBoardFrame) {
     }];
@@ -256,7 +253,7 @@ NSString *const KeyDatas = @"datas";
     float pay = 0.0f;
     for (EntityFood *food in _orderData) {
         [((NSMutableArray*)order.orderItems) addObject:@{KeyOrderAmount:food.amount,KeyOrderProductid:food.entityId}];
-        pay += food.price.floatValue*food.amount.intValue;
+        pay += food.price.floatValue*food.amount.floatValue;
     }
     
     if (pay<0) {
@@ -350,10 +347,10 @@ NSString *const KeyDatas = @"datas";
     }else{
         NSArray *array = [_arrayData objectAtIndex:indexPath.section];
         EntityFood *food = [array objectAtIndex:indexPath.row];
-        int ordernum = 0;
+        float ordernum = 0;
         for (EntityFood *ef in self.orderData) {
             if (ef.entityId.longValue==food.entityId.longValue) {
-                ordernum = ef.amount.intValue;
+                ordernum = ef.amount.floatValue;
                 break;
             }
         }

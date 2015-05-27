@@ -34,7 +34,7 @@ bool flagStatusBarHidden;
 
 @implementation Utils
 
-+(void) initialize{
++(void) g{
     [self initParams];
 }
 

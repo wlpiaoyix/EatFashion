@@ -57,8 +57,8 @@ NSString *const SALE_PREPARED = @"SALE_PREPARED";
     if(self.status)[json setObject:self.status forKey:KeyFoodStatus];
     if([NSString isEnabled:self.generatedTime])[json setObject:self.generatedTime forKey:KeyFoodGeneratedTime];
     if([NSString isEnabled:self.descriptionInfo])[json setObject:self.descriptionInfo forKey:KeyFoodDescriptionInfo];
-    if(self.amount&&self.amount.intValue)[json setObject:self.amount forKey:KeyFoodAmount];
-    if(self.remaining&&self.amount.intValue)[json setObject:self.remaining forKey:KeyFoodRemaining];
+    if(self.amount&&self.amount.floatValue)[json setObject:self.amount forKey:KeyFoodAmount];
+    if(self.remaining&&self.amount.floatValue)[json setObject:self.remaining forKey:KeyFoodRemaining];
     return json;
 }
 

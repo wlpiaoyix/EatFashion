@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface ExpendtureAddProductCell : UITableViewCell
 - (void) setParams:(NSDictionary*) params;
+- (void) setDispatchBlockShouldEndEdit:(void (^)(UITextField *field,NSString* text)) dispatch_block;
 +(float) getHeight;
 @end

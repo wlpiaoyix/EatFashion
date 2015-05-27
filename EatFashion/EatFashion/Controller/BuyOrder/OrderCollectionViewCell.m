@@ -64,13 +64,18 @@ UIColor *ColorCellBackground;
     r.origin.y = frame.size.height-r.size.height-_lablePrice.frame.size.height;
     _lableName.frame = r;
 }
--(void) setOrderNum:(int)orderNum{
+-(void) setOrderNum:(float)orderNum{
     _orderNum= orderNum;
     NSString *arg = @"";
     if (_orderNum>0) {
         [self.lableOrderNum setHidden:NO];
-        arg = [NSString stringWithFormat:@"%d",_orderNum];
+        arg = [[NSNumber numberWithFloat:orderNum] stringValueWithPrecision:2];
         self.lableOrderNum.text = arg;
+        [self.lableOrderNum automorphismWidth];
+        CGRect r = self.lableOrderNum.frame;
+        r.size.width = MAX(r.size.height, r.size.width);
+        r.origin.x = self.frame.size.width - r.size.width + r.size.height*0.3;
+        self.lableOrderNum.frame = r;
     }else{
         [self.lableOrderNum setHidden:YES];
     }
